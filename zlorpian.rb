@@ -10,6 +10,7 @@ class Zlorpian
     "X" => "daborp",
     "#" => "traborp"
   }
+  SUFFIXES = ["iffa", "onk", "en", "ity", ""]
 
   def zlorpinumeral(decimal)
     decimal.to_s(BASE).tr(DECIMAL, ZLORPINUMERAL)
@@ -20,7 +21,15 @@ class Zlorpian
   end
 
   def zlorpanese(decimal)
-    zlorpinumeral(decimal).gsub(ZLORPINUMERAL_REGEX, ZLORPANESE)
+    z = zlorpinumeral(decimal)
+    return ZLORPANESE[z] if decimal == 0
+    result = ""
+    z.chars.zip(SUFFIXES.last(z.size)).each do |digit, suffix|
+      # the only time we should ever use "zlorp" is in the zero case
+      next if digit == ZLORPINUMERAL[0] && decimal > 0
+      result << ZLORPANESE[digit] << suffix
+    end
+    result
   end
 
 end

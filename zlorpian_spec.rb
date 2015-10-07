@@ -41,7 +41,7 @@ RSpec.describe Zlorpian do
       [1, "borp"],
       [2, "daborp"],
       [3, "traborp"],
-      # [4, "borpity"],
+      [4, "borpity"],
       # [5, "borpityborp"],
       # [6, "borpitydaborp"],
       # [7, "borpitytraborp"],

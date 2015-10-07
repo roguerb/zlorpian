@@ -1,7 +1,7 @@
 class Zlorpian
 
   def zlorpinumeral(decimal)
-    ["-", "|", "X", "#"][decimal]
+    decimal.to_s(4).tr("0123", "-|X#")
   end
 
   def zlorpanese(decimal)

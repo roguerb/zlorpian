@@ -14,14 +14,14 @@ RSpec.describe Zlorpian do
       [2, "X"],
       [3, "#"],
       [4, "|-"],
-      # [5, "||"],
-      # [15, "##"],
-      # [16, "|--"],
-      # [17, "|-|"],
-      # [200, "#-X-"],
-      # [221, "#|#|"],
-      # [237, "#X#|"],
-      # [1001, "##XX|"]
+      [5, "||"],
+      [15, "##"],
+      [16, "|--"],
+      [17, "|-|"],
+      [200, "#-X-"],
+      [221, "#|#|"],
+      [237, "#X#|"],
+      [1001, "##XX|"]
     ].each do |(input, output)|
       it "converts #{input} to #{output}" do
         expect(subject.zlorpinumeral(input)).to eq output

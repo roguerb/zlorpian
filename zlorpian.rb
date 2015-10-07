@@ -2,18 +2,17 @@ class Zlorpian
 
   DECIMAL = "0123"
   ZLORPINUMERAL = "-|X#"
+  ZLORPANESE = %w[zlorp borp daborp traborp]
+  SUFFIXES = %w[iffa onk en ity] + [""]
   BASE = ZLORPINUMERAL.size
   ZLORPINUMERAL_REGEX = Regexp.new(ZLORPINUMERAL.chars.map {|c| Regexp.escape(c) }.join("|"))
-  ZLORPANESE = {
-    "-" => "zlorp",
-    "|" => "borp",
-    "X" => "daborp",
-    "#" => "traborp"
-  }
-  SUFFIXES = ["iffa", "onk", "en", "ity", ""]
 
   def zlorpinumeral(decimal)
-    decimal.to_s(BASE).tr(DECIMAL, ZLORPINUMERAL)
+    zlorpibase(decimal).tr(DECIMAL, ZLORPINUMERAL)
+  end
+
+  def zlorpibase(decimal)
+    decimal.to_s(BASE)
   end
 
   def from_zloropinumeral(zlorpinumeral)
@@ -21,15 +20,13 @@ class Zlorpian
   end
 
   def zlorpanese(decimal)
-    z = zlorpinumeral(decimal)
-    return ZLORPANESE[z] if decimal == 0
-    result = ""
-    z.chars.zip(SUFFIXES.last(z.size)).each do |digit, suffix|
+    return ZLORPANESE[0] if decimal.zero?
+    digits = zlorpibase(decimal)
+    digits.chars.map(&:to_i).zip(SUFFIXES.last(digits.size)).each_with_object("") do |(digit, suffix), result|
       # the only time we should ever use "zlorp" is in the zero case
-      next if digit == ZLORPINUMERAL[0] && decimal > 0
+      next if digit.zero?
       result << ZLORPANESE[digit] << suffix
     end
-    result
   end
 
 end

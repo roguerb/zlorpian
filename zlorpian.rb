@@ -13,7 +13,7 @@ class Zlorpian
   end
 
   def zlorpanese(decimal)
-    return ""
+    return "zlorp"
   end
 
 end

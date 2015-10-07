@@ -10,7 +10,7 @@ RSpec.describe Zlorpian do
   context "zlorpinumeral" do
     [
       [0, "-"],
-      # [1, "|"],
+      [1, "|"],
       # [2, "X"],
       # [3, "#"],
       # [4, "|-"],

@@ -26,10 +26,10 @@ RSpec.describe Zlorpian do
       it "converts #{input} to #{output}" do
         expect(subject.zlorpinumeral(input)).to eq output
       end
-      #
-      # it "converts #{output} to #{input}" do
-      #   expect(subject.from_zloropinumeral(output)).to eq input
-      # end
+      
+      it "converts #{output} to #{input}" do
+        expect(subject.from_zloropinumeral(output)).to eq input
+      end
     end
   end
 

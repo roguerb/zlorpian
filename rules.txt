@@ -1,0 +1,136 @@
+Good afternoon fellow space travelers, thanks for coming along on this mission.  We still have about a week
+before we arrive at New Zlorpia, so please return your stasis tubes to their original upright position and
+prepare for your mission briefing.
+
+We are going to be negotiating a trade agreement with the Zlorpians for their supply of Farkle seeds.  They
+have a much different way of counting than we do, and I'm concerned that if we don't have a good way to
+work with their number system, we'll be at a disadvantage in negotiations.  Let me explain:
+
+The zlorpians have a single arm that comes out of their forehead, with a hand that has 3 fingers.  As a
+result, our base-10 way of counting (based on our ten fingers) is as alien to them as their way is to us.
+
+In some ways, their numbering system is similar to ours.
+
+They represent the value zero with a single horizontal dash, and call it "zlorp".
+
+The represent the number one with a single vertical dash, and it it "borp".
+
+The number 2 is represented with 2 crossed lines, similar to our letter "X", and is called a "daborp".
+
+Their number 3 is represented with a hash of three lines... the closest character on our keyboards is "#",
+and is called a traborp.
+
+And thats it.  They only represent the numbers 0-3.
+
+BUT, just like us, they use columns to represent bigger numbers, 'rolling over' into the next column when
+it gets too big.  Counting this way, their numbers look like this:
+
+
+ -
+ |
+ X
+ #
+ |-
+ ||
+ |X
+ |#
+ X-
+ X|
+ XX
+ X#
+ #-
+ #|
+ #X
+ ##
+|--
+
+Thankfully, they also have a really predictable way of naming each of the columns. When there is only one
+column, the numbers are pronounced exactly as we define them above.  When there is a second column, called
+the 'ity' column, they add the ending 'ity' to the name of the number.  So the number "||" is called
+"Borpityborp".  The number "X#" is called "Daborpitytraborp".  By convention, if the number in the last
+column is a zlorp, as in "|-", then they drop the zlorp, simply calling it "borpity".  This same pattern
+holds for as many columns as we have learned to translate.
+
+the rightmost column does not modify the number's name, as we have already seen.
+the second-rightmost column is named "ity", as we have already seen.
+The third-rightmost is named "en"
+the fourth rightmost is named "onk"
+the fifth rightmost is named "iffa"
+
+Your job is to write 2 functions.  The first one should take a decimal number and convert it to a zlorpinumeral.
+It should work like this:
+
+>> zlorpinumeral(0)
+=> "-"
+>> zlorpinumeral(1)
+=> "|"
+>> zlorpinumeral(2)
+=> "X"
+>> zlorpinumeral(3)
+=> "#"
+>> zlorpinumeral(4)
+=> "|-"
+>> zlorpinumeral(5)
+=> "||"
+>> zlorpinumeral(15)
+=> "##"
+>> zlorpinumeral(16)
+=> "|--"
+>> zlorpinumeral(17)
+=> "|-|"
+>> zlorpinumeral(200)
+=> "#-X-"
+>> zlorpinumeral(221)
+=> "#|#|"
+>> zlorpinumeral(237)
+=> "#X#|"
+>> zlorpinumeral(1001)
+=> "##XX|"
+
+
+The second one should convert a decimal number to zlorpanese.  It should work like this:
+
+?> zlorpanese(0)
+=> "zlorp"
+>> zlorpanese(1)
+=> "borp"
+>> zlorpanese(2)
+=> "daborp"
+>> zlorpanese(3)
+=> "traborp"
+>> zlorpanese(4)
+=> "borpity"
+>> zlorpanese(5)
+=> "borpityborp"
+>> zlorpanese(6)
+=> "borpitydaborp"
+>> zlorpanese(7)
+=> "borpitytraborp"
+>> zlorpanese(8)
+=> "daborpity"
+>> zlorpanese(9)
+=> "daborpityborp"
+>> zlorpanese(10)
+=> "daborpitydaborp"
+>> zlorpanese(15)
+=> "traborpitytraborp"
+>> zlorpanese(16)
+=> "borpen"
+>> zlorpanese(17)
+=> "borpenborp"
+>> zlorpanese(21)
+=> "borpenborpityborp"
+>> zlorpanese(200)
+=> "traborponkdaborpity"
+>> zlorpanese(221)
+=> "traborponkborpentraborpityborp"
+>> zlorpanese(237)
+=> "traborponkdaborpentraborpityborp"
+>> zlorpanese(1001)
+=> "traborpiffatraborponkdaborpendaborpityborp"
+
+
+If as a side effect you have functions that convert a zorpinumeral to a zorpanese string, please share them.
+Extra points for the ability to convert a zorpinumeral back to a decimal number.
+
+If anyone wants to convert these examples to some acceptance tests, I'd appreciate the contribution back.

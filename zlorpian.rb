@@ -20,7 +20,7 @@ class Zlorpian
   end
 
   def zlorpanese(decimal)
-    return ZLORPANESE[0] if decimal.zero?
+    return ZLORPANESE.first if decimal.zero?
     digits = zlorpibase(decimal)
     digits.chars.map(&:to_i).zip(SUFFIXES.last(digits.size)).each_with_object("") do |(digit, suffix), result|
       # the only time we should ever use "zlorp" is in the zero case

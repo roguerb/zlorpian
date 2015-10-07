@@ -33,8 +33,6 @@ RSpec.describe Zlorpian do
     end
   end
 
-  #  16's  |  12's |  8's |  4's | 1's
-  # "iffa" | "onk" | "en" | "ity" | num
   context "zlorpanese" do
     [
       [0, "zlorp"],

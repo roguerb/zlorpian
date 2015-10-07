@@ -3,6 +3,13 @@ class Zlorpian
   DECIMAL = "0123"
   ZLORPINUMERAL = "-|X#"
   BASE = ZLORPINUMERAL.size
+  ZLORPINUMERAL_REGEX = Regexp.new(ZLORPINUMERAL.chars.map {|c| Regexp.escape(c) }.join("|"))
+  ZLORPANESE = {
+    "-" => "zlorp",
+    "|" => "borp",
+    "X" => "daborp",
+    "#" => "traborp"
+  }
 
   def zlorpinumeral(decimal)
     decimal.to_s(BASE).tr(DECIMAL, ZLORPINUMERAL)
@@ -13,7 +20,7 @@ class Zlorpian
   end
 
   def zlorpanese(decimal)
-    return "zlorp"
+    zlorpinumeral(decimal).gsub(ZLORPINUMERAL_REGEX, ZLORPANESE)
   end
 
 end

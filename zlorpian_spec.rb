@@ -38,9 +38,9 @@ RSpec.describe Zlorpian do
   context "zlorpanese" do
     [
       [0, "zlorp"],
-      # [1, "borp"],
-      # [2, "daborp"],
-      # [3, "traborp"],
+      [1, "borp"],
+      [2, "daborp"],
+      [3, "traborp"],
       # [4, "borpity"],
       # [5, "borpityborp"],
       # [6, "borpitydaborp"],
